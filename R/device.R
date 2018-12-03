@@ -33,7 +33,7 @@ check_sides <- function(sides){
 #The function check_prob determines whether the prob vector is valid
 #' @export
 check_prob <- function(prob){
-  if (!length(prob) <1){
+  if (length(prob) <1){
     stop("prob vector must have at least one element")
   }
   if (!is.numeric(prob)){
@@ -54,7 +54,7 @@ check_prob <- function(prob){
 
 #check_length checks that both the sides and prob vector have the same length
 #' @export
-check_length <- function(sides, prob){
+check_lengths <- function(sides, prob){
   if (length(sides) != length(prob)){
     stop("error:sides and probability must have the same length")
   }

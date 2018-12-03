@@ -96,7 +96,7 @@ print.summary.rolls <- function(roll_s, ...){
 #' @param n an index
 #' @return the value at the ith index
 #' @export
-"[.rolls" <- function(rolled, n) {
+"[.rolls" <- function(roll2, n) {
   return(roll2$rolls[n])
 }
 
