@@ -1,0 +1,32 @@
+title: "Intro"
+author: "MK Larson"
+date: "December 2, 2018"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to cointoss}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, message = FALSE, include=FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+
+library(roller)
+```
+
+## Rolling a Dice
+This package simulates tossing a coin(or device), a specific number of times. From there, the relative frequencies are calculated and a plot of the series is displayed.
+
+##Creating the Device
+To create your own device, you must create the dice object. To do this, use the function device().
+
+```{r}
+new_device <- device()
+new_device
+```
+
+By default, 'device()' will create a fair coin with standard sides of 1 and 2, and probabilities of 0.5.
+To change this, you must use the arguments 'sides' and 'prob'
+```{r}
+load_dice <- device(sides = c("heads", "tails"), prob = c(0.9, 0.1))
+```

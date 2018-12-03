@@ -1,9 +1,12 @@
 Package: roller
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Title: Creates Device and Roll objects to simulate dice rolling
+Version: 1.0.0
+Authors@R: MK Larson, marykathrynlarson@berkeley.edu, github: mklarsonn
+Description: The purpose of this package is to simulate rolling a die and getting the outputs with different sample sizes.
+            Using the device object and roll object, you can customize the roll and then see the visualization of
+            the relative frequencies in a plot.
 Depends: R (>= 3.5.1)
-License: What license is it under?
+License: GPL-2
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.1.1
