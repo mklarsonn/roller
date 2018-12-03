@@ -3,9 +3,17 @@
 Private Repository for HW assignments of Stat133 fall 2018
 
 -Name: MK Larson
+
+
 -Github username: mklarsonn
+
+
 -Email: mlarson@skycatch.com
+
+
 -Lab Section: 109
+
+
 -GSI: Zhiang Zhou
 
 
