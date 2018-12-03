@@ -7,6 +7,14 @@
 
 
 
+device <- function(sides = c(1, 2), prob = c(.5, .5)){
+  check_prob(prob)
+  check_sides(sides)
+  check_lengths(sides,prob)
+  return_dev <- list(sides = sides, prob = prob)
+  class(return_dev) <- "device"
+  return(return_dev)
+}
 
 #The function check_sides determines whether the sides vector is valid
 #'@export
@@ -55,16 +63,6 @@ check_length <- function(sides, prob){
   }
 }
 
-#the main function of this object, which returns the new object of class device
-#' @export
-device <- function(sides = c(1, 2), prob = c(.5, .5)){
-  check_prob(prob)
-  check_sides(sides)
-  check_lengths(sides,prob)
-  return_dev <- list(sides = sides, prob = prob)
-  class(return_dev) <- "device"
-  return(return_dev)
-}
 
 
 #print.device prints out the contents of device in a table
