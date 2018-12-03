@@ -30,3 +30,41 @@ To change this, you must use the arguments 'sides' and 'prob'
 ```{r}
 load_dice <- device(sides = c("heads", "tails"), prob = c(0.9, 0.1))
 ```
+#Roll the Device
+Once the device is created, we then have to roll it. The function "roll()" will execute this, given a specific number of times.
+The output is an object of class "roll", and will contain the vector "rolls"
+```{r}
+roll25 <- roll(new_device, times = 20)
+roll25
+```
+
+The 'summary()' function will return a list with the data frame containing the counts and frequencies.
+
+```{r}
+summary25 <- summary(roll25)
+summary25
+```
+
+The function 'plot()' will produce a barchart of the relative frequencies for each side.
+```{r}
+plot(roll25)
+```
+
+The `"["` (extraction) method allows us to extract individual rolls.
+```{r}
+roll25[10]
+```
+
+The `"[<-" method allows us to replace the value of a roll.
+```{r}
+roll25[11] <- 5
+roll25[11]
+roll25[11] <- 1
+roll25[11]
+```
+
+the `"+"` method allows us to add rolls to an already rolled object.
+```{r}
+roll45 <- roll25 + 20
+summary(roll45)
+```

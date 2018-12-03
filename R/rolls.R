@@ -52,20 +52,15 @@ print.rolls <- function(rolly, ...){
 #' @return a dataframe with the summary of rolls containing
 #' four elements
 #' @export
-summary.rolls <- function(rolled) {
-  count <- rep(0,length(rolled$sides))
-  names(count) <- side
-  side <- rolled$sides
-  for (r in rolled$rolls) {
-    count[r] = count[r] + 1
-  }
-  ratio <- count / rolled$total
-  data <- list(freqs = data.frame("side" = side, "count" = counter,
-                                     "prop" = prop))
-  row.names(data$freqs) <- seq(1, length(rv_list$freqs$side),1)
-  names(data$freqs) <- c("side", "count", "prop")
-  class(data) <- "summary.rolls"
-  return(data)
+summary.rolls <- function(x, ...) {
+  freqs <- data.frame(
+    side = x$sides,
+    count = as.numeric(table(x$rolls)),
+    prop = as.numeric(table(x$rolls))/sum(table(x$rolls))
+  )
+  obj <- list(freqs = freqs)
+  class(obj) <- "summary.roll"
+  obj
 }
 
 #we now have a fuctin to show the class of summary.rolls
@@ -124,6 +119,6 @@ plot.rolls <- function(roll_d) {
   barplot(get_summary$prop, names.arg = get_summary$side,
           xlab = "sides", ylab = "Relative Frequencies",
           main = paste("Plot of Relative Frequencies",
-                       rolled$total, "rolls"))
+                       roll_d$total, "rolls"))
 }
 
