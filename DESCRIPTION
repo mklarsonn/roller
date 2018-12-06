@@ -1,7 +1,7 @@
 Package: roller
 Title: Creates Device and Roll objects to simulate dice rolling
 Version: 1.0.0
-Authors@R: MK Larson, marykathrynlarson@berkeley.edu, github: mklarsonn
+Authors: MK Larson, marykathrynlarson@berkeley.edu, github: mklarsonn
 Description: The purpose of this package is to simulate rolling a die and getting the outputs with different sample sizes.
             Using the device object and roll object, you can customize the roll and then see the visualization of
             the relative frequencies in a plot.
